@@ -1,5 +1,3 @@
-module Main where
-
 import Prelude (IO, id, ($), Float, (+), (-), (*))
 import Data.Maybe
 import Control.Monad
