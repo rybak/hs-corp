@@ -29,11 +29,11 @@ paintGame (InMenu m) = return $ renderMenu m
 paintGame _ = return $ pictures [text "Not implemented", debugPic]
 
 handleInputs :: Event -> GameState -> IO GameState
-handleInputs _ (InMenu (Selected Quit)) = exitWith ExitSuccess
 handleInputs e (InMenu m) = return $ InMenu $ handleMenuInputs e m
 handleInputs _ x = return x
 
 simulate :: Float -> GameState -> IO GameState
+simulate _ (InMenu (Selected Quit)) = exitWith ExitSuccess
 simulate _ x = return x -- do nothing
 
 main :: IO ()
